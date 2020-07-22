@@ -121,17 +121,6 @@ class PageCache extends Plugin
             }
         );
 
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    if (!$this->createCacheConfig())
-                        throw new \Exception('We could not create the config for some reason');
-                }
-            }
-        );
-
         Craft::info(
             Craft::t(
                 'page-cache',
@@ -148,20 +137,6 @@ class PageCache extends Plugin
     public function getSettings()
     {
         return parent::getSettings();
-    }
-
-    /**
-     * Checks if the cache config exists, and generates it if not
-     * @return bool|false|int
-     */
-    protected function createCacheConfig()
-    {
-        if (!file_exists(self::CACHE_CONFIG_PATH)){
-            $data = json_encode($this->getSettings());
-            return file_put_contents(self::CACHE_CONFIG_PATH,$data);
-        }
-
-        return true;
     }
 
     protected function createSettingsModel()
