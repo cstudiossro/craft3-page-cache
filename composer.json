@@ -1,0 +1,41 @@
+{
+    "name": "cstudios/page-cache",
+    "description": "This plugin utilizes the PageCache filter from yii2 into your craft 3 instance",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "page cache"
+    ],
+    "support": {
+        "docs": "https://github.com/cstudios-slovakia/page-cache/blob/master/README.md",
+        "issues": "https://github.com/cstudios-slovakia/page-cache/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gergely Horvath",
+            "homepage": "https://cstudios.sk"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "cstudios\\pagecache\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Page Cache",
+        "handle": "page-cache",
+        "developer": "Gergely Horvath",
+        "developerUrl": "https://cstudios.sk",
+        "documentationUrl": "https://github.com/cstudios-slovakia/page-cache/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/cstudios-slovakia/page-cache/master/CHANGELOG.md",
+        "class": "cstudios\\pagecache\\PageCache"
+    }
+}
